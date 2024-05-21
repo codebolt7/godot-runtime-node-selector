@@ -1,6 +1,10 @@
 Fork of DigitallyTailored's Runtime Node Selector For Godot
 
-[https://youtu.be/V28E77niAxM](https://youtu.be/V28E77niAxM)
+[![Demostration](https://img.youtube.com/vi/V28E77niAxM/hqdefault.jpg)](https://www.youtube.com/embed/V28E77niAxM)
+
+[<img src="https://img.youtube.com/vi/V28E77niAxM/hqdefault.jpg" width="800" height="450"
+/>](https://www.youtube.com/embed/V28E77niAxM)
+
 
 ## Additions
 - Pressing F1 opens new debug window
