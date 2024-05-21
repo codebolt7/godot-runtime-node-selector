@@ -3,20 +3,22 @@ extends Node3D
 var collision_added = []
 var collision_nodes = [] # List to keep track of the generated collision nodes
 
+@onready var window: Window = $".."
+@onready var free_camera: FreeLookCamera = $"../FreeCamera"
+
 func _ready():
 	# Make sure to enable input processing
 	set_process_input(true)
 
-func _input(event):
+func _input(event: InputEvent):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		
 		# Detect click
 		iterative_add_collision()
-		var camera = get_viewport().get_camera_3d()
 		var space_state = get_world_3d().direct_space_state
-		var mouse_vector2 = get_viewport().get_mouse_position()
-		var raycast_origin_vector3 = camera.project_ray_origin(mouse_vector2)
-		var raycast_end = camera.project_position(mouse_vector2, 1000)
+		var mouse_vector2 = window.get_viewport().get_mouse_position()
+		var raycast_origin_vector3 = free_camera.project_ray_origin(mouse_vector2)
+		var raycast_end = free_camera.project_position(mouse_vector2, 1000)
 		var query = PhysicsRayQueryParameters3D.create(raycast_origin_vector3, raycast_end)
 		var intersect = space_state.intersect_ray(query) 
 		

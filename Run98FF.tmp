@@ -7,18 +7,14 @@
 [node name="RuntimePlus" type="Node"]
 script = ExtResource("1_ex6oe")
 
+[node name="RuntimeSelector" type="Node3D" parent="."]
+script = ExtResource("1_mn781")
+
 [node name="Window" type="Window" parent="."]
 title = "Runtime Plus"
 initial_position = 4
 size = Vector2i(800, 450)
 visible = false
-always_on_top = true
-
-[node name="RuntimeSelector" type="Node3D" parent="Window"]
-script = ExtResource("1_mn781")
 
 [node name="FreeCamera" type="Camera3D" parent="Window"]
 script = ExtResource("2_2fhvd")
-
-[connection signal="close_requested" from="Window" to="." method="close_window"]
-[connection signal="focus_exited" from="Window" to="Window/FreeCamera" method="cancel_inputs"]
